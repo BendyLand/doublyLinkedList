@@ -124,12 +124,3 @@ class DoublyLinkedList:
         if self.head_node.get_next_node() == None:
             return False
         return self.head_node.get_next_node() == self.tail_node.get_prev_node()
-
-
-ll = DoublyLinkedList()
-ll.add_to_head(1)
-ll.add_to_head(2)
-ll.add_to_head(3)
-
-
-print(ll.unknown())
