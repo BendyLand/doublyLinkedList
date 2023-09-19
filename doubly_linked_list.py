@@ -1,4 +1,24 @@
-from ..node import Node
+class Node:
+    def __init__(self, value, next_node = None, prev_node = None):
+        self.value = value
+        self.next_node = next_node
+        self.prev_node = prev_node
+
+    def get_value(self):
+        return self.value
+
+    def get_next_node(self):
+        return self.next_node
+
+    def set_next_node(self, next_node):
+        self.next_node = next_node
+
+    def get_prev_node(self):
+        return self.prev_node
+    
+    def set_prev_node(self, prev_node):
+        self.prev_node = prev_node
+
 
 class DoublyLinkedList:
     def __init__(self):
@@ -97,3 +117,19 @@ class DoublyLinkedList:
                 string_list += str(current_node.get_value()) + "\n"
             current_node = current_node.get_next_node()
         return string_list
+    
+    def unknown(self):
+        if self.head_node == None:
+            return False
+        if self.head_node.get_next_node() == None:
+            return False
+        return self.head_node.get_next_node() == self.tail_node.get_prev_node()
+
+
+ll = DoublyLinkedList()
+ll.add_to_head(1)
+ll.add_to_head(2)
+ll.add_to_head(3)
+
+
+print(ll.unknown())
